@@ -9,6 +9,15 @@
   <body>
     <div class="container">
       <h1>📦 GitHub Events Tracker</h1>
+      <div class="legend-dropdown">
+        <button id="legend-toggle">🎨 Event Color Codes ⏷</button>
+        <div id="legend-content" class="legend-content">
+          <div class="legend-item push"><span>Push</span></div>
+          <div class="legend-item pull_request"><span>Pull Request</span></div>
+          <div class="legend-item merge"><span>Merge</span></div>
+        </div>
+      </div>
+
       <p class="refresh-note">
         Auto-refreshing in <span id="countdown">15</span> seconds
       </p>
