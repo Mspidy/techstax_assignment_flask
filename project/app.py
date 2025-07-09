@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Connect to MongoDB
-client = MongoClient("mongodb://localhost:27017/") 
+client = MongoClient("mongodb://localhost:27017/")  
 db = client["github_events"]
 collection = db["events"]
 
@@ -72,4 +72,4 @@ def get_events():
     return jsonify(result)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False)
