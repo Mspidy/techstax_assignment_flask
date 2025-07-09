@@ -1,13 +1,13 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from pymongo import MongoClient
-from datetime import datetime
+from datetime import datetime, timezone
 
 app = Flask(__name__)
 CORS(app)
 
 # Connect to MongoDB
-client = MongoClient("mongodb://localhost:27017/")  
+client = MongoClient("mongodb://localhost:27017/")   
 db = client["github_events"]
 collection = db["events"]
 
@@ -23,7 +23,7 @@ def webhook():
     if event_type == "push":
         author = data['pusher']['name']
         branch = data['ref'].split('/')[-1]
-        timestamp = datetime.utcnow()
+        timestamp = datetime.now(timezone.utc)
         collection.insert_one({
             "event_type": "push",
             "author": author,
@@ -40,7 +40,7 @@ def webhook():
                 "author": data['pull_request']['user']['login'],
                 "from_branch": data['pull_request']['head']['ref'],
                 "to_branch": data['pull_request']['base']['ref'],
-                "timestamp": datetime.utcnow()
+                "timestamp": datetime.now(timezone.utc)
             }
         else:
             # It's a pull request
@@ -49,7 +49,7 @@ def webhook():
                 "author": data['pull_request']['user']['login'],
                 "from_branch": data['pull_request']['head']['ref'],
                 "to_branch": data['pull_request']['base']['ref'],
-                "timestamp": datetime.utcnow()
+                "timestamp": datetime.now(timezone.utc)
             }
         collection.insert_one(event)
 
