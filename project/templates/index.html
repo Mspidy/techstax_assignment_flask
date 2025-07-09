@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>GitHub Events Monitor</title>
-</head>
-<body>
-  <h2>Latest GitHub Events</h2>
-  <ul id="event-list"></ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Events Tracker</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📦 GitHub Events Tracker</h1>
+      <p class="refresh-note">
+        Auto-refreshing in <span id="countdown">15</span> seconds
+      </p>
 
-  <script src="/static/main.js"></script>
-</body>
+      <div class="card">
+        <ul id="event-list" class="event-list"></ul>
+      </div>
+    </div>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">GitHub updated successfully!</div>
+
+    <script src="/static/main.js"></script>
+  </body>
 </html>

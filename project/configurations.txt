@@ -1,0 +1,18 @@
+npm install -g localtunnel
+lt --port 5000
+
+**for another terminal
+python app.y
+
+****thats it****
+
+
+
+****** webhooks implementations ******
+with the helo of lt --port 5000
+got a url with the help of that url direct insert into git webhooks settings and allow push and pull 
+if __name__ == "__main__":
+    app.run(debug=True, use_reloader=False)
+
+use_reloader=False
+with the help of this our lt --port 5000 not disconnect
