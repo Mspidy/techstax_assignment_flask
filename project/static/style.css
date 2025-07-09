@@ -71,3 +71,29 @@ h1 {
 .toast.show {
   opacity: 1;
 }
+
+/* Common list item style */
+.event-list {
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Push = blue */
+.push {
+  background-color: #e3f2fd;
+  border-left: 4px solid #2196f3;
+}
+
+/* Pull Request = orange */
+.pull {
+  background-color: #fff3e0;
+  border-left: 4px solid #ff9800;
+}
+
+/* Merge = green */
+.merge {
+  background-color: #e8f5e9;
+  border-left: 4px solid #4caf50;
+}
