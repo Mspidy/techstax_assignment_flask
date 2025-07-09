@@ -134,7 +134,6 @@ def webhook():
             }
         else:
             return '', 204  # Ignore other actions
-
         collection.insert_one(event)
 
     return '', 204
